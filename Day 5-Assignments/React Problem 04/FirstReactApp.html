@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSX and Babel</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      let root = ReactDOM.createRoot(document.getElementById("root"));
+
+      let ReactApp = () => {
+        let image =  "https://banner2.cleanpng.com/20180809/lix/9c8b279f462a16bcc49d7cc41b4cd709.webp";
+
+        let header = "SUBSCRIBE"
+        let message = "Subscribe to our newsletter & stay up to date!";
+
+        let imageSize = {
+          width: "300px",
+          height: "auto",
+          cursor : "pointer"
+        };
+
+        let boxStyle = {
+          border : "5px solid black",
+          textAlign : "center",
+          margin : "7% 30%",
+          padding : "50px",
+          backgroundColor : "#FFFFFF",
+          width: "550px",
+          borderRadius : "20px"
+
+        }
+
+        let inputBox = {
+          borderRadius : "20px",
+          width: "250px",
+          height : "35px",
+          backgroundColor : "#EDF2F6",
+            border : "none"
+        }
+
+        let ButtonBox = {
+          borderRadius : "20px",
+          height : "35px",
+          backgroundColor : "#4399E1",
+          color : "white",
+          fontWeight : "bold",
+          margin: "15px",
+          border : "none",
+          cursor : "pointer"
+        }
+
+        return (
+          <div style = {boxStyle}>
+            <img src={image} style={imageSize} alt="MailImage" />
+            <h1 style = {{cursor : "pointer"}}>{header}</h1>
+            <h2 style = {{cursor : "pointer"}}>{message}</h2>
+            <input type="text" id="text-input" style={inputBox}/>
+            <button style = {ButtonBox}>Subscribe</button>
+          </div>
+        );
+      };
+
+      root.render(<ReactApp />);
+    </script>
+  </body>
+</html>

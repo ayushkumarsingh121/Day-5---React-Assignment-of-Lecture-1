@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Template</title>
+  </head>
+  <body>
+    <h1>
+      Reflection: As you complete the task, reflect on the differences between
+      manipulating the DOM using traditional JavaScript and React's approach.
+      Consider the benefits of React's declarative UI elements over direct DOM
+      manipulation.
+    </h1>
+
+    <hr />
+
+    <h2>Reflection Points:</h2>
+    <h3>Traditional DOM Manipulation:</h3>
+    <ul>
+      <li>
+        Directly updating HTML elements with methods like
+        <code>document.getElementById</code> and <code>innerHTML</code>.
+      </li>
+      <li>
+        Can lead to complex, error-prone code when managing updates and state.
+      </li>
+    </ul>
+
+    <h3>React's Approach:</h3>
+    <ul>
+      <li>
+        Uses a declarative syntax where you describe what the UI should look
+        like.
+      </li>
+      <li>
+        Automatically updates the UI when the state changes, reducing the need
+        for manual DOM manipulation.
+      </li>
+      <li>Makes the code more readable and easier to manage.</li>
+    </ul>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    let root = ReactDOM.createRoot(document.getElementById("root"));
+    let element = <h1>Reflection on DOM Manipulation</h1>;
+    root.render(element);
+  </script>
+</html>

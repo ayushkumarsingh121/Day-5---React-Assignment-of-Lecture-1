@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSX and Babel</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      let root = ReactDOM.createRoot(document.getElementById("root"))
+
+      let ReactWatchApp = () => {
+        let image = "https://media.gq.com/photos/636175be96efe5f456046f92/16:9/w_1920,c_limit/m126067-0001_2209jva_002_l_new-cover.jpeg"
+
+        let imageStyle = {
+          width : "100%",
+          height : "500px"
+        }
+
+        let header = "Automatic Watch"
+
+        let price = "$350.00 USD"
+
+        let firstText = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum repudiandae, deserunt quasi explicabo ex est! Officia in, tempora quos laudantium eos nesciunt ad facilis ab eius quo eligendi obcaecati qui"
+
+        let secondText = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum repudiandae, deserunt quasi explicabo ex est! Officia in, tempora quos laudantium eos nesciunt ad facilis ab eius quo eligendi obcaecati qui"
+       let bracket = "5 bar (50 metres / 167 feet)"
+       let buttonStyle = {
+        width : "100%",
+        height : "40px",
+        backgroundColor : "black",
+        color : "white",
+        fontWeight : "bold"
+       }
+        return (
+          <div>
+            <img src={image} style = {imageStyle} alt="watchImage"/>
+            <h1>{header}</h1>
+            <h1>{price}</h1>
+            <h2>{firstText}</h2>
+            <h2>{secondText}</h2>
+            <h3>PRODUCT DETAILS</h3>
+            <p><b>Between lugs :</b> 20 mm</p>
+            <p><b>Bracelet :</b> leather strap</p>
+            <p><b>Case :</b> Steel</p>
+            <p><b>Case diameter :</b> 42 mm</p>
+            <p><b>Dial color :</b> Black</p>
+            <p><b>Crystal :</b> Domed, scratch-resistant sapphire crystal with anti-reflective treatment inside</p>
+            <p><b>Water resistance : </b>{bracket}</p>
+             <button style = {buttonStyle}>ADD TO CART</button>
+            </div>
+        )
+      }
+
+      root.render(<ReactWatchApp/>)
+    </script>
+  </body>
+</html>
